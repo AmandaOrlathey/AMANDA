@@ -41,7 +41,7 @@
                 <h1> Amanda Orlathey </h1>
                 <h2> DESENVOLVEDORA DE SOFTWARE </h2>
                 <p class="descricao">
-                    DESENVOLVEDOR FULL STACK, FOCADO EM RESOLUÇÔES CIBERNETICAS
+                    DESENVOLVEDORA FULL STACK, FOCADO EM RESOLUÇÔES CIBERNETICAS
                 </p>
                 <div class="botoes">
                     <a href="#projetos" class="botao">Ver Projetos</a>

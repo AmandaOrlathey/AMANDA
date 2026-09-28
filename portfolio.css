@@ -85,7 +85,7 @@
         line-height: 1.1;
         font-weight: bold;
         margin-bottom: 5px;
-        color:rgb(0, 4, 255);
+        color:#369c94;
     }
     
     .inicio h1{
@@ -118,7 +118,7 @@
     
     .botao{
         display: inline-block;
-        background-color:rgb(0, 4, 255);
+        background-color:#369c94;
         color: #fff;
         padding: 13px 25px;
         border-radius: 8px;
@@ -126,18 +126,18 @@
     }
     
     .botao:hover{
-        background-color:rgb(0, 4, 255);
+        background-color:#369c94;
         transform: translateY(-3px);
     }
     
     .botao-secundario{
         background-color: transparent;
-        border: 1px solid rgb(0, 4, 255);
-        color:rgb(0, 4, 255);
+        border: 1px solid #369c94;
+        color:#369c94;
     }
     
     .botao-secundario:hover{
-        background-color:rgb(0, 4, 255);
+        background-color:#369c94;
         color: #fff;
     }
     
@@ -154,7 +154,7 @@
     }
     
     .titulo-secao p{
-        color:rgb(0, 4, 255);
+        color:#369c94;
         font-size: 14px;
         font-weight: bold;
         text-transform: uppercase;
@@ -199,7 +199,7 @@
         background-color: #1d1d27;
         padding: 20px;
         border-radius: 8px;
-        border-left: 4px solid rgb(0, 4, 255);
+        border-left: 4px solid #369c94;
     }
     
     .habilidade h3{
@@ -235,11 +235,11 @@
     
     .card:hover{
         transform: translateY(-8px);
-        border-color:rgb(0, 4, 255);
+        border-color:#369c94;
     }
     
     .numero-projeto{
-        color: rgb(0, 4, 255);
+        color: #369c94;
         font-size: 14px;
         font-weight: bold;
         margin-bottom: 20px;
@@ -256,7 +256,7 @@
     }
     
     .card > a{
-        color:rgb(0, 4, 255);
+        color:#369c94;
         font-weight: bold;
     }
     
@@ -308,8 +308,8 @@
     }
     
     .contato-links a:hover{
-        border-color: rgb(0, 4, 255);
-        color: rgb(0, 4, 255);
+        border-color: #369c94;
+        color: #369c94;
         transform: translateY(-3px);
     }
     
