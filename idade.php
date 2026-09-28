@@ -23,16 +23,16 @@
 <body>
 <header>
         <nav>
-            <a href=" index.html">inicio</a>
-            <a href="cadastro.html">cadastro</a>
+            <a href=" index.php">inicio</a>
+            <a href="idade.php">Verificador de idade</a>
         </nav> 
     
 </header>
 </body>
 
 <main>
-    <section class="cadastro">
-    </h1>cadastro</h1>
+    <section class="projetos">
+    </h1>Verificador de idade</h1>
     <form>
         <label> name :</label>
         <input type="text">
