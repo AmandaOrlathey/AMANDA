@@ -1,12 +1,21 @@
+<?php /* Precisa abrir e fechar dessa forma para que ele entenda que é um PHP e não precisa indicar um tipo de variavel*/
+$nome = "Amanda"; /* é utilizado o $ para declarar uma variavel  */
+$idade = 27;
+$altura = 1.58;
+$matricula_ativa = true;
+
+if($idade>=18){
+  $resultado = "É maior de Idade";
+}
+
+else {
+$resultado = "É menor de Idade";
+}
 
 
 
 
-
-
-
-
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +30,8 @@
     <!--COMENTARIO-->
     <header>
     <div class="logo">
-        <h2>Amanda <span>Orlathey</span></h2>
+        <h2> <?= $resultado ?></h2> <!-- sempre utilizar o = depois do ? para não precisar realizar o php echo toda vez-->
+        <!--<h2>Amanda <span>Orlathey</span></h2>-->
     </div>
     <nav>
         <a href="#inicio">Inicio</a>
