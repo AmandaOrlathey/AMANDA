@@ -21,7 +21,7 @@
     <!--COMENTARIO-->
     <header>
     <div class="logo">
-        <h2>Eduardo <span>Augusto</span></h2>
+        <h2>Amanda <span>Orlathey</span></h2>
     </div>
     <nav>
         <a href="#inicio">Inicio</a>
@@ -38,8 +38,8 @@
          <section id="inicio" class="inicio">
             <div class="inicio-conteudo">
                 <p class="apresentacao"> Olá, eu sou </p>
-                <h1> Eduardo Augusto </h1>
-                <h2> DESENVOLVEDOR DE SOFTWARE </h2>
+                <h1> Amanda Orlathey </h1>
+                <h2> DESENVOLVEDORA DE SOFTWARE </h2>
                 <p class="descricao">
                     DESENVOLVEDOR FULL STACK, FOCADO EM RESOLUÇÔES CIBERNETICAS
                 </p>
@@ -59,10 +59,10 @@
             <div class="sobre-conteudo">
                 <div class="sobre-texto">
                     <p>
-                        24 anos, desenhista Mecanico, Desenhista á mão livre.
+                        27 anos, Administradora e programadora, apaixonada por jogos, e desenvolver projetos.
                     </p>
                     <p>
-                        Obejetivo principal usar IA para viabilizar sistemas, segurança e desenvolvimentos Webs.
+                        Obejetivo principal usar IA para viabilizar sistemas, segurança e desenvolvimentos Webs, e desenvolver jogos e ferramentas no qual facilitem o cotidiano.
                     </p>
                 </div>
                 <div class="habilidades">
@@ -143,15 +143,15 @@
                 <h2>Contato</h2>
             </div>
             <div class="contato-links">
-                <a href="mailto:deviceecreate@gmail.com">Email</a>
-                <a href="https://github.com/EduardoDuartee">GitHub</a>
-                <a href="www.linkedin.com/in/eduardo-oliveira-a64758279">LinkedIn</a>
+                <a href="amanda.orlatei.documentos@gmail.com">Email</a>
+                <a href="https://github.com/AmandaOrlathey/AMANDA">GitHub</a>
+                <a href="">LinkedIn</a>
             </div>
         </section>
     </main>
     <footer>
         <p>
-            DESENVOLVIDO POR <a href="https://Eduardoa755.devlook.xyz">Eduadro Augusto</a>
+            DESENVOLVIDO POR <a href="https://Amanda755.devlook.xyz">Eduadro Augusto</a>
         </p>
         <p>
             HTML + CSS
