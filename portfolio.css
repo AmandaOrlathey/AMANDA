@@ -46,7 +46,7 @@
     }
     
     .logo span{
-        color: rgb(0, 4, 255);
+        color: #369c94;
     }
     
     nav{
@@ -61,7 +61,7 @@
     }
     
     nav a:hover{ /*hover es una pseudoclase*/
-    color:rgb(0, 4, 255);
+    color:#369c94;
     }
     
     /*==============*/
