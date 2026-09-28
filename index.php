@@ -30,8 +30,8 @@ $resultado = "É menor de Idade";
     <!--COMENTARIO-->
     <header>
     <div class="logo">
-        <h2> <?= $resultado ?></h2> <!-- sempre utilizar o = depois do ? para não precisar realizar o php echo toda vez-->
-        <!--<h2>Amanda <span>Orlathey</span></h2>-->
+        
+        <h2>Amanda <span>Orlathey</span></h2>
     </div>
     <nav>
         <a href="#inicio">Inicio</a>
