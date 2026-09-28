@@ -102,7 +102,7 @@ $resultado = "É menor de Idade";
                     <div class="numero-projeto">
                         01
                     </div>
-                    <h3>Sistema de Cadastro</h3>
+                    <h3>Sistema de Cadastro Idade</h3>
                     <p>
                         Descriçao do sistema de Cadastro
                     </p>
@@ -111,7 +111,7 @@ $resultado = "É menor de Idade";
                         <span>CSS</span>
                         <!--span>PHP</span-->
                     </div>
-                    <a href="cadastro.html">Ver Projeto</a>
+                    <a href="Idade.php">Ver Projeto</a>
                 </div>
                 <!-- PROJETO 2 -->
                 <div class="card">
