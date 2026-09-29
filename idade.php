@@ -28,7 +28,8 @@
             <a href=" index.php">Cadastro</a>
             <br> <br>
             <a href="idade.php">Verificador de idade</a>
-            <br> <br>
+            <br> 
+            <br>
         </nav> 
     
 </header>
@@ -45,7 +46,7 @@
         <label> idade</label class="idade" id = "idade" idade= "idade" >
         <input type="number">
 
-        <button type="submit"> cadastro</button> 
+        <button type="submit"> Verificar</button> 
     </form>
     <p> <?= $resultado ?></p>
 </section>
