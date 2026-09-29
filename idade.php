@@ -3,6 +3,15 @@
  $idade = $_post ["idade"];
  $resultado = "";
 
+ if ($idade >= 18){
+    $resultado = "Maior de Idade ($idade anos) - Acesso Liberado!";
+ }
+
+ else {
+    $resultado = "menor de Idade ($idade) - Acesso Negado!";
+ }
+
+
 
 ?>
 <!DOCTYPE html>
