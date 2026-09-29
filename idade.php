@@ -40,6 +40,8 @@
     <form method="POST">
         <label> name :</label>
         <input type="text" class="nome" id="nome" name="nome">
+        <br> 
+        <br>
         <label> idade</label class="idade" id = "idade" idade= "idade" >
         <input type="number">
 
