@@ -1,52 +1,51 @@
  /* CENTRALIZAR O CONTEUDO NO MEIO*/
 body{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #0f0f14;
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #0f0f14;
-    color: #ffffff;
-    line-height: 1.6;
+    
+   
 }
 
  /* ESTILO DO QUADRADO*/
 
-.caixa-cadastro{
-   border: 2px #ffffff;
+.card-cadastro{
+   border: 1px solid #40444b;
+   background-color:#2c2c2c ;
+   border-radius: 10px;
    padding: 30px;
-   border-radius: 8px;
-   /* CENTRALIZAR O CONTEUDO DENTRO DA CAIXA*/
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 15px;
-}
+   width: 320px;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0);}
 /* estilo dos rotulos nome e idade*/
 
-.caixa-cadastro label{
-    font-size: 16px;
-    font-weight: bold;
-}
-
-/* estilo dos rotulos de texto*/
-
-.caixa-cadastro input{
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+.card-cadastro h2{
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 22px;
     text-align: center;
 }
-/* estilo do botão*/
 
-.caixa-cadastro button{
-    padding: 8px 20px;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    background-color: #369c94;
-    color: white;
-    font-weight: bold;
+.campo-grupo{
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
 }
 
+.campo-grupo label{
+    color: #b9bbbe;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.campo-grupo input{
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid;
+}
