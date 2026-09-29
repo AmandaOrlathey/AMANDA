@@ -63,3 +63,23 @@ nav a{
 nav a:hover{ /*hover es una pseudoclase*/
 color:#369c94;
 }
+
+section{
+    padding: 100px 10%;
+    }
+    
+    .titulo-secao{
+        margin-bottom: 50px;
+    }
+    
+    .titulo-secao p{
+        color:#369c94;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    
+    .titulo-secao h2{
+        font-size: 38px;
+    }
