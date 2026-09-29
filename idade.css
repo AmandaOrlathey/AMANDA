@@ -1,90 +1,52 @@
-.caixa-cadastro{
-   border: #292936;
-   padding: 20px;
-   width: fit-content;
-   border-radius: 4px;
-}
-*{
-
+ /* CENTRALIZAR O CONTEUDO NO MEIO*/
+body{
     margin: 0;
-    padding: 0;
-    }
-    
-    html{
-        scroll-behavior: smooth;
-    }
-    
-    body{
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #0f0f14;
-        color: #369c94;
-        line-height: 1.6;
-    }
-    
-    a{
-     text-decoration: none;   
-     color: inherit; /*inherit copia el color */
-    }.projetos-secao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #0f0f14;
+    color: #ffffff;
+    line-height: 1.6;
 }
 
-.projetos{
-    display: flex;
-    gap: 25px;
-}
+ /* ESTILO DO QUADRADO*/
 
-.numero-projeto{
-    color: #369c94;
-    font-size: 14px;
+.caixa-cadastro{
+   border: 2px #ffffff;
+   padding: 30px;
+   border-radius: 8px;
+   /* CENTRALIZAR O CONTEUDO DENTRO DA CAIXA*/
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 15px;
+}
+/* estilo dos rotulos nome e idade*/
+
+.caixa-cadastro label{
+    font-size: 16px;
     font-weight: bold;
-    margin-bottom: 20px;
 }
 
-.tecnologias{
-    display: flex;
-    gap: 8px;
-    margin-bottom: 25px;
+/* estilo dos rotulos de texto*/
+
+.caixa-cadastro input{
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+/* estilo do botão*/
+
+.caixa-cadastro button{
+    padding: 8px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #369c94;
+    color: white;
+    font-weight: bold;
 }
 
-.tecnologias span{
-    background-color: #292936;
-    color: #bdbdc9;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 12px;
-}
-
-nav{
-    display: flex;
-    gap: 30px; /*espacio entre los textos de la barra de navegacion*/
-}
-
-nav a{
-    color: #b8b8c7;
-    font-size: 15px;
-    transition: 0.3s;
-}
-
-nav a:hover{ /*hover es una pseudoclase*/
-color:#369c94;
-}
-
-section{
-    padding: 100px 10%;
-    }
-    
-    .titulo-secao{
-        margin-bottom: 50px;
-    }
-    
-    .titulo-secao p{
-        color:#369c94;
-        font-size: 14px;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-    
-    .titulo-secao h2{
-        font-size: 38px;
-    }
