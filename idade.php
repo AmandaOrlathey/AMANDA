@@ -1,6 +1,7 @@
 <?php 
  $nome = $_POST["nome"];
  $idade = $_post ["idade"];
+ $resultado = "";
 
  if ($idade >= 18){
     $resultado = "Maior de Idade ($idade anos) - Acesso Liberado!";
@@ -44,6 +45,7 @@
 
         <button type="submit"> cadastro</button> 
     </form>
+    <p> <?= $resultado ?></p>
 </section>
 </main>
 </html>
