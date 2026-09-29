@@ -24,8 +24,10 @@
 <body>
 <header>
         <nav>
-            <a href=" index.php">projetos</a>
+            <a href=" index.php">Cadastro</a>
+            <br> <br>
             <a href="idade.php">Verificador de idade</a>
+            <br> <br>
         </nav> 
     
 </header>
@@ -33,7 +35,7 @@
 
 <main>
     <section class="projetos">
-    </h1>Verificador de idade</h1>
+    </h1>Cadastro</h1>
     <form method="POST">
         <label> name :</label>
         <input type="text" class="nome" id="nome" name="nome">

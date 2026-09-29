@@ -12,7 +12,7 @@
     body{
         font-family: Arial, Helvetica, sans-serif;
         background-color: #0f0f14;
-        color: #F5F5F5;
+        color: #369c94;
         line-height: 1.6;
     }
     
@@ -28,20 +28,6 @@
     gap: 25px;
 }
 
-.card{
-    flex: 1;
-    background-color: #191922;
-    padding: 30px;
-    border-radius: 12px;
-    border:  1px solid #292936;
-    transition: 0.3s;
-}
-
-.card:hover{
-    transform: translateY(-8px);
-    border-color:#369c94;
-}
-
 .numero-projeto{
     color: #369c94;
     font-size: 14px;
@@ -49,22 +35,6 @@
     margin-bottom: 20px;
 }
 
-.card h3{
-    font-size: 22px;
-    margin-bottom: 15px;
-}
-
-.card p{
-    color: #9c9cab;
-    margin-bottom: 25px;
-}
-
-.card > a{
-    color:#369c94;
-    font-weight: bold;
-}
-
-/*tecno*/
 .tecnologias{
     display: flex;
     gap: 8px;
@@ -77,4 +47,19 @@
     border-radius: 5px;
     padding: 5px 10px;
     font-size: 12px;
+}
+
+nav{
+    display: flex;
+    gap: 30px; /*espacio entre los textos de la barra de navegacion*/
+}
+
+nav a{
+    color: #b8b8c7;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover{ /*hover es una pseudoclase*/
+color:#369c94;
 }
