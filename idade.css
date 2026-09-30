@@ -7,7 +7,7 @@
   }
   
   body {
-    background-color: #0d0f12; /* Fundo escuro igual à segunda imagem */
+    background-color: #0d0f12; /* Fundo escuro  */
     color: #ffffff;
     min-height: 100vh;
     display: flex;
@@ -15,13 +15,18 @@
   }
   
   /* Cabeçalho / Navbar */
-  .header {
+  header{
+    height: 80px;
+    padding: 0 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 4rem;
-    background-color: #0d0f12;
-  }
+    background-color: #15151d;
+    border-bottom: 1px solid #292936;
+    position: sticky;
+    top: 0; /* pesquisar*/
+    z-index: 10; /*pesquisar */
+}
   
   .logo {
     font-size: 1.5rem;
@@ -30,8 +35,7 @@
   }
   
   .logo span {
-    color: #38a3a5; /* Tom verde/turquesa do site */
-  }
+    color: #38a3a5;  }
   
   .nav a {
     color: #a0aab8;
