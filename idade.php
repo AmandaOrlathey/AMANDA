@@ -1,48 +1,56 @@
-<?php
-$mensagem = "";
+<?php 
+ $nome = $_POST["nome"];
+ $idade = $_post ["idade"];
+ $resultado = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['nome'];
-    $idade = $_POST['idade'];
+ if ($idade >= 18){
+    $resultado = "Maior de Idade ($idade anos) - Acesso Liberado!";
+ }
 
-    if ($idade >= 18) {
-        $mensagem = "{$nome} - Maior de idade ({$idade}) - Acesso Permitido!";
-    } else {
-        $mensagem = "{$nome} - Menor de idade ({$idade}) - Acesso Negado!";
-    }
-}
+ else {
+    $resultado = "menor de Idade ($idade) - Acesso Negado!";
+ }
+
+
+
 ?>
-
-<header class="header">
-  <div class="logo">
-    Amanda <span>Orlathey</span>
-  </div>
-  <nav class="nav">
-    <a href="#">Início</a>
-    <a href="#">Sobre</a>
-    <a href="#">Projetos</a>
-    <a href="#">Contato</a>
-  </nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de idade</title>
+    <link rel="stylesheet" href="idade.css">
+</head>
+<body>
+<header>
+        <nav>
+            <a href=" index.php">Cadastro</a>
+            <br> <br>
+            <a href="idade.php">Verificador de idade</a>
+            <br> 
+            <br>
+        </nav> 
+    
 </header>
+</body>
 
-<main class="container">
-  <form class="card-form" method="POST">
-    <h2 class="title">Cadastro</h2>
-    <a href="#" class="sub-link">Verificador de idade</a>
+<main>
+    <section class="projetos">
+    </h1>Cadastro</h1>
+    <form method="POST">
+        <label> name :</label>
+        <input type="text" class="nome" id="nome" name="nome">
+        <br> 
+        <br>
+        <label> idade</label class="idade" id = "idade" idade= "idade" >
+        <input type="number">
 
-    <div class="input-group">
-      <label for="nome">nome:</label>
-      <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
-    </div>
-
-    <div class="input-group inline-group">
-      <label for="idade">idade:</label>
-      <div class="input-button-wrapper">
-        <input type="number" name="idade" id="idade" placeholder="Sua idade" required>
-        <button type="submit" class="btn-primary">Verificador</button>
-      </div>
-    </div>
-
-    <p class="status-message"><?php echo $mensagem; ?></p>
-  </form>
+        <button type="submit"> Verificar</button> 
+    </form>
+    <p> <?= $resultado ?></p>
+</section>
 </main>
+</html>
+</body>
+</html>
