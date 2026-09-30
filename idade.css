@@ -1,51 +1,147 @@
- /* CENTRALIZAR O CONTEUDO NO MEIO*/
-body{
+ /* Configurações Globais */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #efeff5;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #0d0f12; /* Fundo escuro igual à segunda imagem */
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Cabeçalho / Navbar */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    background-color: #0d0f12;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  
+  .logo span {
+    color: #38a3a5; /* Tom verde/turquesa do site */
+  }
+  
+  .nav a {
+    color: #a0aab8;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav a:hover {
+    color: #ffffff;
+  }
+  
+  /* Container Principal */
+  .container {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    
-   
-}
-
- /* ESTILO DO QUADRADO*/
-
-.card-cadastro{
-   border: 1px solid #40444b;
-   background-color:#b8b3b3 ;
-   border-radius: 10px;
-   padding: 30px;
-   width: 320px;
-   box-shadow: 0 4px 15px rgba(0, 0, 0, 0);}
-/* estilo dos rotulos nome e idade*/
-
-.card-cadastro h2{
-    color: #ffffff;
-    margin-top: 0;
-    margin-bottom: 24px;
-    font-size: 22px;
-    text-align: center;
-}
-
-.campo-grupo{
-    margin-bottom: 18px;
+    padding: 2rem;
+  }
+  
+  /* Formulário */
+  .card-form {
     display: flex;
     flex-direction: column;
-}
-
-.campo-grupo label{
-    color: #b9bbbe;
-    font-size: 14px;
-    margin-bottom: 6px;
-}
-
-.campo-grupo input{
-    padding: 10px 12px;
+    align-items: center;
+    width: 100%;
+    max-width: 480px;
+  }
+  
+  .title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.2rem;
+  }
+  
+  .sub-link {
+    color: #38a3a5;
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .sub-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Campos de Input */
+  .input-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+  }
+  
+  .input-group label {
+    width: 70px;
+    font-size: 1rem;
+    color: #e0e0e0;
+    text-align: right;
+    margin-right: 15px;
+  }
+  
+  .input-group input {
+    flex: 1;
+    padding: 0.75rem 1rem;
     border-radius: 6px;
-    border: 1px solid;
-}
+    border: 1px solid #2a2e35;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .input-button-wrapper {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .input-button-wrapper input {
+    flex: 1;
+  }
+  
+  /* Botão Estilizado */
+  .btn-primary {
+    background-color: #38a3a5; /* Cor destaque do botão */
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #2c8284;
+  }
+  
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
+  
+  /* Mensagem de Erro / Status */
+  .status-message {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: #e0e0e0;
+    text-align: center;
+  }
