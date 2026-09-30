@@ -25,11 +25,20 @@ if ($idade >= 18) {
 <body>
     <header>
         <nav>
-            <a href=" index.php">Cadastro</a>
-            <br> <br>
-            <a href="idade.php">Verificador de idade</a>
-            <br>
-            <br>
+        <div class="logo">
+        
+        <h2>Amanda <span>Orlathey</span></h2>
+    </div>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+        <a href=" index.php">Cadastro</a>
+        <br> <br>
+        <a href="idade.php">Verificador de idade</a>
+        <br>
+        <br>
         </nav>
 
     </header>

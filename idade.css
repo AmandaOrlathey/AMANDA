@@ -1,32 +1,77 @@
  /* Configurações Globais */
 * {
+
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  body {
-    background-color: #0d0f12; /* Fundo escuro  */
-    color: #ffffff;
-    min-height: 100vh;
+    }
+    
+    html{
+        scroll-behavior: smooth;
+    }
+    
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #0f0f14;
+        color: #F5F5F5;
+        line-height: 1.6;
+    }
+    
+    a{
+     text-decoration: none;   
+     color: inherit; /*inherit copia el color */
+    }
+    
+    /*==========*/
+    /*   MENu   */
+    /*==========*/
+    
+    header{
+        height: 80px;
+        padding: 0 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #15151d;
+        border-bottom: 1px solid #292936;
+        position: sticky;
+        top: 0; /* pesquisar*/
+        z-index: 10; /*pesquisar */
+    }
+    
+    .logo h2{
+        font-size: 26px;
+    }
+    
+    .logo span{
+        color: #369c94;
+    }
+    
+    nav{
+        display: flex;
+        gap: 30px; /*espacio entre los textos de la barra de navegacion*/
+    }
+    
+    nav a{
+        color: #b8b8c7;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+    
+    nav a:hover{ /*hover es una pseudoclase*/
+    color:#369c94;
+    }
+    
+    /*==============*/
+    /*    INICIO    */
+    /*==============*/
+    
+    .inicio{
+    min-height: calc(100vh - 80px); /*desafio pra casa (view port)*/
+    padding: 80px 10%;
     display: flex;
-    flex-direction: column;
-  }
-  
-  /* Cabeçalho / Navbar */
-  header{
-    height: 80px;
-    padding: 0 10%;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #15151d;
-    border-bottom: 1px solid #292936;
-    position: sticky;
-    top: 0; /* pesquisar*/
-    z-index: 10; /*pesquisar */
-}
+    background-color: #0f0f14;
+    }
   
   .logo {
     font-size: 1.5rem;
