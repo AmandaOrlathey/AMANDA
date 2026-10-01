@@ -1,77 +1,78 @@
  /* Configurações Globais */
-* {
-
+* * {
     margin: 0;
     padding: 0;
-    }
-    
-    html{
-        scroll-behavior: smooth;
-    }
-    
-    body{
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #0f0f14;
-        color: #F5F5F5;
-        line-height: 1.6;
-    }
-    
-    a{
-     text-decoration: none;   
-     color: inherit; /*inherit copia el color */
-    }
-    
-    /*==========*/
-    /*   MENu   */
-    /*==========*/
-    
-    header{
-        height: 80px;
-        padding: 0 10%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #15151d;
-        border-bottom: 1px solid #292936;
-        position: sticky;
-        top: 0; /* pesquisar*/
-        z-index: 10; /*pesquisar */
-    }
-    
-    .logo h2{
-        font-size: 26px;
-    }
-    
-    .logo span{
-        color: #369c94;
-    }
-    
-    nav{
-        display: flex;
-        gap: 30px; /*espacio entre los textos de la barra de navegacion*/
-    }
-    
-    nav a{
-        color: #b8b8c7;
-        font-size: 15px;
-        transition: 0.3s;
-    }
-    
-    nav a:hover{ /*hover es una pseudoclase*/
-    color:#369c94;
-    }
-    
-    /*==============*/
-    /*    INICIO    */
-    /*==============*/
-    
-    .inicio{
-    min-height: calc(100vh - 80px); /*desafio pra casa (view port)*/
-    padding: 80px 10%;
+    box-sizing: border-box; /*  controle de tamanhos */
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0f0f14;
+    color: #F5F5F5;
+    line-height: 1.6;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit; 
+  }
+  
+  /*==========*/
+  /*   MENU   */
+  /*==========*/
+  
+  header {
+    height: 80px;
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #15151d;
+    border-bottom: 1px solid #292936;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .logo h2 {
+    font-size: 26px;
+  }
+  
+  .logo span {
+    color: #369c94;
+  }
+  
+  nav {
+    display: flex;
+    gap: 30px; /* espaço entre os links do menu */
+  }
+  
+  nav a {
+    color: #b8b8c7;
+    font-size: 15px;
+    transition: 0.3s;
+  }
+  
+  nav a:hover {
+    color: #369c94;
+  }
+  
+  /*==============*/
+  /*    INICIO    */
+  /*==============*/
+  
+  .inicio {
+    min-height: calc(100vh - 80px);
+    padding: 40px 10%;
     display: flex;
     align-items: center;
+    justify-content: center; /* CENTRALIZA O QUADRADO NO MEIO DA PÁGINA */
     background-color: #0f0f14;
-    }
+  }
   
   .logo {
     font-size: 1.5rem;
@@ -80,7 +81,8 @@
   }
   
   .logo span {
-    color: #38a3a5;  }
+    color: #38a3a5;
+  }
   
   .nav a {
     color: #a0aab8;
@@ -103,13 +105,20 @@
     padding: 2rem;
   }
   
-  /* Formulário */
+  /* Formulário (Quadrado / Card em volta) */
   .card-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     max-width: 480px;
+  
+    /* --- AJUSTES DO QUADRADO EM VOLTA --- */
+    background-color: #15151d; /* Fundo do card destacado */
+    border: 1px solid #292936;  /* Borda do quadrado */
+    border-radius: 12px;        /* Cantos arredondados */
+    padding: 2.5rem;            /* Espaçamento interno */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Sombra elegante */
   }
   
   .title {
