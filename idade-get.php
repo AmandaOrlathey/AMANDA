@@ -9,7 +9,9 @@ if ($idade >= 18) {
     $resultado = "menor de Idade ($idade) - Acesso Negado!";
 }
 
-
+/** A diferença dos dois é que dentro da aba de navegador no HTTPS o POST oculta as informações e o GET ele transcreve 
+ * para que sejá possivel qualquer um verificar
+ */
 
 ?>
 <!DOCTYPE html>
