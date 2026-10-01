@@ -51,8 +51,8 @@
         <input type="text" class="nome" id="nome" name="nome">
         <br> 
         <br>
-        <label> idade</label class="idade" id = "idade" idade= "idade" >
-        <input type="number">
+        <label> idade</label >
+        <input type="number" class="idade" id="idade" name="idade">
 
         <button type="submit"> Verificar</button> 
     </form>
