@@ -136,16 +136,16 @@ $resultado = "É menor de Idade";
                     <div class="numero-projeto">
                         03
                     </div>
-                    <h3>Sistema de Cadastro</h3>
+                    <h3>Cadastro de Produtos </h3>
                     <p>
-                        Descriçao do sistema de Cadastro
+                        Cadastro de Produtos 
                     </p>
                     <div class="tecnologias">
                         <span>HTML</span>
                         <span>CSS</span>
-                        <!--span>PHP</span-->
+                        <span>PHP</span>
                     </div>
-                    <a href="cadastro.html">Ver Projeto</a>
+                    <a href="produtos.php">Ver Projeto</a>
                 </div>
             </div>
         </section>
