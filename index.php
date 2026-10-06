@@ -128,8 +128,8 @@ $resultado = "É menor de Idade";
                         <span>CSS</span>
                         <span>PHP</span>
                     </div>
-                    </div>
                     <a href="idade-get.php">Ver Projeto</a>
+                    </div>
                 </div>
                 <!-- PROJETO 3 -->
                 <div class="card">
