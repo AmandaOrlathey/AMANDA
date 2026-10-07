@@ -16,12 +16,16 @@ foreach($alunos as $posicao => $alunos){
 if($aluno["nome"]== "Maria"){
 
 // 5. EXCLUIR O ALUNO
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA;
+unset($alunos[$posicao]);//remover o "set" é colocar
 }
 }
 
 //6. REORGANIZAR AS POSOÇOES DO ARRAY
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa;
+$aluno = array_values($alunos);
 
 //7. TRANSFORMAR ARRAY PHP EM JSON NOVAMENTE
 $json = json_encode($alunos, JSON_PRETTY_PRINT| JSON_UNESCAPED_UNICODE);
+
+//8.SALVAR NO ARQUIVO
+file_put_contents($arquivo, $json);
+echo"ALUNO EXCLUIDO";
