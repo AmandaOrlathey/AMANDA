@@ -163,6 +163,23 @@ $resultado = "É menor de Idade";
                     </div>
                     <a href="juridico.php">Ver Projeto</a>
                 </div>
+                 <!-- PROJETO 5 -->
+                 <div class="card">
+                    <div class="numero-projeto">
+                        05
+                    </div>
+                    <h3>chamados </h3>
+                    <p>
+                        atividade de abertura de chamados  
+                    </p>
+                    <div class="tecnologias">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>PHP</span>
+                    </div>
+                    <a href="chamados.php">Ver Projeto</a>
+                </div>
+                </div>
             </div>
         </section>
         <section id="contatos" class="contatos">
