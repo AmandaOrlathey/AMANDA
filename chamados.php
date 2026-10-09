@@ -1,42 +1,28 @@
 <?php
 require_once 'helpdesk-func.php';
 
-$mensagem = "";
+$mensagem = '';
 
-// Verifica se o formulário foi enviado
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    
-    $acao = "";
-    if (isset($_POST['acao'])) {
-        $acao = $_POST['acao'];
-    }
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $acao = $_POST['acao'] ?? '';
 
-    // Ação de Cadastrar
-    if ($acao == 'cadastrar') {
-        $nome = $_POST['nome'];
-        $setor = $_POST['setor'];
-        $equipamento = $_POST['equipamento'];
-        $descricao = $_POST['descricao'];
-        $prioridade = $_POST['prioridade'];
-
-        $mensagem = cadastrarChamado($nome, $setor, $equipamento, $descricao, $prioridade);
+    if ($acao === 'cadastrar') {
+        $mensagem = cadastrarChamado(
+            $_POST['nome'] ?? '',
+            $_POST['setor'] ?? '',
+            $_POST['equipamento'] ?? '',
+            $_POST['descricao'] ?? '',
+            $_POST['prioridade'] ?? ''
+        );
     } 
-    // Ação de Atualizar
-    else if ($acao == 'atualizar') {
-        $posicao = $_POST['posicao'];
-        $status = $_POST['status'];
-
-        $mensagem = atualizarStatus($posicao, $status);
+    elseif ($acao === 'atualizar') {
+        $mensagem = atualizarStatus($_POST['posicao'] ?? '', $_POST['status'] ?? '');
     } 
-    // Ação de Excluir
-    else if ($acao == 'excluir') {
-        $posicao = $_POST['posicao'];
-
-        $mensagem = excluirChamado($posicao);
+    elseif ($acao === 'excluir') {
+        $mensagem = excluirChamado($_POST['posicao'] ?? '');
     }
 }
 
-// Carrega os dados atualizados para exibir na página
 $lista = lerChamados();
 $relatorio = obterRelatorio();
 ?>
@@ -50,28 +36,28 @@ $relatorio = obterRelatorio();
 </head>
 <body>
 
-    <!-- CABEÇALHO -->
     <header>
         <div class="logo">
             <h2>HelpDesk <span>TI</span></h2>
         </div>
         <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
             <a href="#relatorio">Relatório</a>
             <a href="#novo-chamado">Novo Chamado</a>
             <a href="#chamados">Chamados</a>
         </nav>
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
     <main>
 
-        <?php 
-        if ($mensagem != "") {
-            echo '<div class="mensagem">' . $mensagem . '</div>';
-        }
-        ?>
+        <?php if ($mensagem): ?>
+            <div class="mensagem"><?= htmlspecialchars($mensagem) ?></div>
+        <?php endif; ?>
 
-        <!-- RELATÓRIO -->
+        <!-- SEÇÃO RELATÓRIO DE ATENDIMENTOS -->
         <section id="relatorio" class="relatorio-secao">
             <div class="titulo-secao">
                 <p>Estatísticas do Sistema</p>
@@ -81,32 +67,32 @@ $relatorio = obterRelatorio();
             <div class="cards-relatorio">
                 <div class="card">
                     <h3>TOTAL REGISTRADOS</h3>
-                    <p class="numero"><?php echo $relatorio['total']; ?></p>
+                    <p class="numero"><?= $relatorio['total'] ?></p>
                 </div>
                 <div class="card">
                     <h3>ABERTOS</h3>
-                    <p class="numero"><?php echo $relatorio['abertos']; ?></p>
+                    <p class="numero"><?= $relatorio['abertos'] ?></p>
                 </div>
                 <div class="card">
                     <h3>EM ANDAMENTO</h3>
-                    <p class="numero"><?php echo $relatorio['andamento']; ?></p>
+                    <p class="numero"><?= $relatorio['andamento'] ?></p>
                 </div>
                 <div class="card">
                     <h3>RESOLVIDOS</h3>
-                    <p class="numero"><?php echo $relatorio['resolvidos']; ?></p>
+                    <p class="numero"><?= $relatorio['resolvidos'] ?></p>
                 </div>
             </div>
         </section>
 
-        <!-- FORMULÁRIO DE CADASTRO -->
+        <!-- SEÇÃO ABERTURA DE CHAMADOS (CREATE) -->
         <section id="novo-chamado" class="cadastro-secao">
             <div class="titulo-secao">
                 <p>Formulário</p>
                 <h2>Abertura de Chamado</h2>
             </div>
 
-            <!-- O action vazio faz enviar para a própria página index.php -->
-            <form action="index.php" method="POST" class="formulario">
+            <!-- action="" garante que o formulário envia para a página correta -->
+            <form action="" method="POST" class="formulario">
                 <input type="hidden" name="acao" value="cadastrar">
 
                 <div class="campo">
@@ -154,7 +140,7 @@ $relatorio = obterRelatorio();
             </form>
         </section>
 
-        <!-- LISTAGEM DOS CHAMADOS -->
+        <!-- SEÇÃO CONSULTA DE CHAMADOS (READ, UPDATE, DELETE) -->
         <section id="chamados" class="chamados-secao">
             <div class="titulo-secao">
                 <p>Registros Atuais</p>
@@ -162,53 +148,49 @@ $relatorio = obterRelatorio();
             </div>
 
             <div class="projetos">
-                <?php if (empty($lista)) { ?>
+                <?php if (empty($lista)): ?>
                     <p>Nenhum chamado registrado no momento.</p>
-                <?php } else { ?>
-                    <?php 
-                    foreach ($lista as $posicao => $item) { 
-                        $numeroExibicao = $posicao + 1;
-                    ?>
+                <?php else: ?>
+                    <?php foreach ($lista as $posicao => $item): ?>
                         <div class="card card-chamado">
-                            <div class="numero-projeto">#<?php echo $numeroExibicao; ?></div>
-                            <h3><?php echo $item['nome']; ?></h3>
-                            <p><strong>Setor:</strong> <?php echo $item['setor']; ?></p>
-                            <p><strong>Equipamento:</strong> <?php echo $item['equipamento']; ?></p>
-                            <p><strong>Descrição:</strong> <?php echo $item['descricao']; ?></p>
+                            <div class="numero-projeto">#<?= sprintf('%02d', $posicao + 1) ?></div>
+                            <h3><?= htmlspecialchars($item['nome']) ?></h3>
+                            <p><strong>Setor:</strong> <?= htmlspecialchars($item['setor']) ?></p>
+                            <p><strong>Equipamento:</strong> <?= htmlspecialchars($item['equipamento']) ?></p>
+                            <p><strong>Descrição:</strong> <?= htmlspecialchars($item['descricao']) ?></p>
 
                             <div class="tecnologias">
-                                <span>Prioridade: <?php echo $item['prioridade']; ?></span>
-                                <span>Status: <?php echo $item['status']; ?></span>
+                                <span>Prioridade: <?= htmlspecialchars($item['prioridade']) ?></span>
+                                <span>Status: <?= htmlspecialchars($item['status']) ?></span>
                             </div>
 
                             <div class="botoes-acao">
-                                <!-- Alterar Status -->
-                                <form action="index.php" method="POST" style="display:inline-block;">
+                                <!-- Alterar Status (UPDATE) -->
+                                <form action="" method="POST" style="display:inline-block;"><!-- Action envia as informações para o mesmo site no qual estou utilizando -->
                                     <input type="hidden" name="acao" value="atualizar">
-                                    <input type="hidden" name="posicao" value="<?php echo $posicao; ?>">
+                                    <input type="hidden" name="posicao" value="<?= $posicao ?>">
                                     <select name="status" onchange="this.form.submit()">
-                                        <option value="Aberto" <?php if($item['status'] == 'Aberto') echo 'selected'; ?>>Aberto</option>
-                                        <option value="Em andamento" <?php if($item['status'] == 'Em andamento') echo 'selected'; ?>>Em andamento</option>
-                                        <option value="Resolvido" <?php if($item['status'] == 'Resolvido') echo 'selected'; ?>>Resolvido</option>
+                                        <option value="Aberto" <?= $item['status'] == 'Aberto' ? 'selected' : '' ?>>Aberto</option>
+                                        <option value="Em andamento" <?= $item['status'] == 'Em andamento' ? 'selected' : '' ?>>Em andamento</option>
+                                        <option value="Resolvido" <?= $item['status'] == 'Resolvido' ? 'selected' : '' ?>>Resolvido</option>
                                     </select>
                                 </form>
 
-                                <!-- Excluir -->
-                                <form action="index.php" method="POST" style="display:inline-block;">
+                                <!-- Excluir (DELETE) -->
+                                <form action="" method="POST" style="display:inline-block;">
                                     <input type="hidden" name="acao" value="excluir">
-                                    <input type="hidden" name="posicao" value="<?php echo $posicao; ?>">
+                                    <input type="hidden" name="posicao" value="<?= $posicao ?>">
                                     <button type="submit" class="botao botao-excluir" onclick="return confirm('Deseja excluir este chamado?')">Excluir</button>
                                 </form>
                             </div>
                         </div>
-                    <?php } ?>
-                <?php } ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         </section>
 
     </main>
 
-    <!-- RODAPÉ -->
     <footer>
         <p>SISTEMA DE HELPDESK - DESENVOLVIDO EM PHP + JSON</p>
     </footer>

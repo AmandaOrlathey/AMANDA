@@ -3,85 +3,68 @@
 
 $arquivo = 'chamados.json';
 
-// Função que lê os chamados salvos no arquivo JSON
+// Função para ler o ficheiro JSON
 function lerChamados() {
     global $arquivo;
-    
-    // Se o arquivo não existir, retorna uma lista vazia
     if (!file_exists($arquivo)) {
-        return array();
+        return [];
     }
-    
-    $conteudo = file_get_contents($arquivo);
-    $dados = json_decode($conteudo, true);
-    
-    if ($dados == null) {
-        return array();
-    }
-    
-    return $dados;
+    $json = file_get_contents($arquivo);
+    return json_decode($json, true) ?? [];
 }
 
-// Função que salva a lista no arquivo JSON
-function salvarChamados($lista) {
+// Função para salvar no ficheiro JSON
+function salvarChamados($dados) {
     global $arquivo;
-    $json = json_encode($lista, JSON_PRETTY_PRINT);
-    file_put_contents($arquivo, $json);
+    $dados = array_values($dados);
+    file_put_contents($arquivo, json_encode($dados, JSON_PRETTY_PRINT));
 }
 
-// Função para Cadastrar um novo chamado
+// CADASTRAR (CREATE)
 function cadastrarChamado($nome, $setor, $equipamento, $descricao, $prioridade) {
-    // Validação simples de campos obrigatórios
-    if ($nome == "" || $descricao == "") {
-        return "Preencha o nome e a descrição!";
+    if (empty(trim($nome)) || empty(trim($descricao))) {
+        return "Erro: O nome do solicitante e a descrição são obrigatórios!";
     }
 
     $chamados = lerChamados();
 
-    $novoChamado = array(
+    $novo = [
         'nome' => $nome,
         'setor' => $setor,
         'equipamento' => $equipamento,
         'descricao' => $descricao,
         'prioridade' => $prioridade,
         'status' => 'Aberto'
-    );
+    ];
 
-    // Adiciona o novo chamado no final da lista
-    $chamados[] = $novoChamado;
-    
+    $chamados[] = $novo;
     salvarChamados($chamados);
     return "Chamado cadastrado com sucesso!";
 }
 
-// Função para Atualizar o Status
+// ATUALIZAR STATUS (UPDATE)
 function atualizarStatus($posicao, $novoStatus) {
     $chamados = lerChamados();
-    
     if (isset($chamados[$posicao])) {
         $chamados[$posicao]['status'] = $novoStatus;
         salvarChamados($chamados);
-        return "Status atualizado com sucesso!";
+        return "Status atualizado!";
     }
-    
-    return "Erro ao atualizar status.";
+    return "Chamado não encontrado.";
 }
 
-// Função para Excluir o chamado
+// EXCLUIR (DELETE)
 function excluirChamado($posicao) {
     $chamados = lerChamados();
-    
     if (isset($chamados[$posicao])) {
-        // Remove a posição do array
-        array_splice($chamados, $posicao, 1);
+        unset($chamados[$posicao]);
         salvarChamados($chamados);
-        return "Chamado excluído!";
+        return "Chamado removido!";
     }
-    
-    return "Erro ao excluir chamado.";
+    return "Chamado não encontrado.";
 }
 
-// Função para montar o relatório
+// RELATÓRIO DE ATENDIMENTOS (READ)
 function obterRelatorio() {
     $chamados = lerChamados();
     
@@ -90,23 +73,16 @@ function obterRelatorio() {
     $andamento = 0;
     $resolvidos = 0;
 
-    foreach ($chamados as $item) {
-        if ($item['status'] == 'Aberto') {
-            $abertos++;
-        }
-        if ($item['status'] == 'Em andamento') {
-            $andamento++;
-        }
-        if ($item['status'] == 'Resolvido') {
-            $resolvidos++;
-        }
+    foreach ($chamados as $c) {
+        if ($c['status'] == 'Aberto') $abertos++;
+        if ($c['status'] == 'Em andamento') $andamento++;
+        if ($c['status'] == 'Resolvido') $resolvidos++;
     }
 
-    return array(
+    return [
         'total' => $total,
         'abertos' => $abertos,
         'andamento' => $andamento,
         'resolvidos' => $resolvidos
-    );
+    ];
 }
-?>
