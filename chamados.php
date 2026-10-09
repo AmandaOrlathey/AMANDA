@@ -3,24 +3,23 @@ require_once 'helpdesk-func.php';
 
 $mensagem = '';
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $acao = $_POST['acao'] ?? '';
 
     if ($acao === 'cadastrar') {
         $mensagem = cadastrarChamado(
-            $_POST['nome'],
-            $_POST['setor'],
-            $_POST['equipamento'],
-            $_POST['descricao'],
-            $_POST['prioridade']
+            $_POST['nome'] ?? '',
+            $_POST['setor'] ?? '',
+            $_POST['equipamento'] ?? '',
+            $_POST['descricao'] ?? '',
+            $_POST['prioridade'] ?? ''
         );
     } 
     elseif ($acao === 'atualizar') {
-        $mensagem = atualizarStatus($_POST['posicao'], $_POST['status']);
+        $mensagem = atualizarStatus($_POST['posicao'] ?? '', $_POST['status'] ?? '');
     } 
     elseif ($acao === 'excluir') {
-        $mensagem = excluirChamado($_POST['posicao']);
+        $mensagem = excluirChamado($_POST['posicao'] ?? '');
     }
 }
 
@@ -37,13 +36,12 @@ $relatorio = obterRelatorio();
 </head>
 <body>
 
-    <!-- CABEÇALHO -->
     <header>
         <div class="logo">
             <h2>HelpDesk <span>TI</span></h2>
         </div>
         <nav>
-             <a href="#inicio">Inicio</a>
+            <a href="#inicio">Inicio</a>
             <a href="#sobre">Sobre</a>
             <a href="#projetos">Projetos</a>
             <a href="#contato">Contato</a>
@@ -53,7 +51,6 @@ $relatorio = obterRelatorio();
         </nav>
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
     <main>
 
         <?php if ($mensagem): ?>
@@ -94,7 +91,8 @@ $relatorio = obterRelatorio();
                 <h2>Abertura de Chamado</h2>
             </div>
 
-            <form action="helpdesk.php" method="POST" class="formulario">
+            <!-- action="" garante que o formulário envia para a página correta -->
+            <form action="" method="POST" class="formulario">
                 <input type="hidden" name="acao" value="cadastrar">
 
                 <div class="campo">
@@ -155,7 +153,7 @@ $relatorio = obterRelatorio();
                 <?php else: ?>
                     <?php foreach ($lista as $posicao => $item): ?>
                         <div class="card card-chamado">
-                            <div class="numero-projeto">#<?= sprintf('%02d', $posicao) ?></div>
+                            <div class="numero-projeto">#<?= sprintf('%02d', $posicao + 1) ?></div>
                             <h3><?= htmlspecialchars($item['nome']) ?></h3>
                             <p><strong>Setor:</strong> <?= htmlspecialchars($item['setor']) ?></p>
                             <p><strong>Equipamento:</strong> <?= htmlspecialchars($item['equipamento']) ?></p>
@@ -168,7 +166,7 @@ $relatorio = obterRelatorio();
 
                             <div class="botoes-acao">
                                 <!-- Alterar Status (UPDATE) -->
-                                <form action="helpdesk.php" method="POST" style="display:inline-block;">
+                                <form action="" method="POST" style="display:inline-block;">
                                     <input type="hidden" name="acao" value="atualizar">
                                     <input type="hidden" name="posicao" value="<?= $posicao ?>">
                                     <select name="status" onchange="this.form.submit()">
@@ -179,7 +177,7 @@ $relatorio = obterRelatorio();
                                 </form>
 
                                 <!-- Excluir (DELETE) -->
-                                <form action="helpdesk.php" method="POST" style="display:inline-block;">
+                                <form action="" method="POST" style="display:inline-block;">
                                     <input type="hidden" name="acao" value="excluir">
                                     <input type="hidden" name="posicao" value="<?= $posicao ?>">
                                     <button type="submit" class="botao botao-excluir" onclick="return confirm('Deseja excluir este chamado?')">Excluir</button>
@@ -193,7 +191,6 @@ $relatorio = obterRelatorio();
 
     </main>
 
-    <!-- RODAPÉ -->
     <footer>
         <p>SISTEMA DE HELPDESK - DESENVOLVIDO EM PHP + JSON</p>
     </footer>

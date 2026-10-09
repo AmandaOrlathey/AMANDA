@@ -16,7 +16,7 @@ function lerChamados() {
 // Função para salvar no ficheiro JSON
 function salvarChamados($dados) {
     global $arquivo;
-    $dados = array_values($dados); // Reorganiza os índices do array
+    $dados = array_values($dados);
     file_put_contents($arquivo, json_encode($dados, JSON_PRETTY_PRINT));
 }
 
