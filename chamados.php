@@ -41,13 +41,12 @@ $relatorio = obterRelatorio();
             <h2>HelpDesk <span>TI</span></h2>
         </div>
         <nav>
-            <a href="#inicio">Inicio</a>
+            <a href="index.php">Inicio</a>
             <a href="#sobre">Sobre</a>
             <a href="#projetos">Projetos</a>
             <a href="#contato">Contato</a>
             <a href="#relatorio">Relatório</a>
-            <a href="#novo-chamado">Novo Chamado</a>
-            <a href="#chamados">Chamados</a>
+            
         </nav>
     </header>
 
