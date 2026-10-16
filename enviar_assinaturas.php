@@ -1,4 +1,4 @@
-<?php 
+g<?php 
 // RECEBER OS DADOS ENVIADOS VIA POST PELA ABA DE ORÇAMENTOS//
 $cliente_nome = $_POST['cliente_nome'] ?? 'Não Informado';
 $cliente_doc = $_POST['cliente_doc'] ?? 'Não informado';
@@ -29,7 +29,21 @@ $text_whatsapp = "https://api.whatsapp.com/send?phone=$cliente_numero&text=$text
     <title>Visualização do Contrato Gerado</title>
 </head>
 <body style="font-family: arial, sans-serif; background-color: #f4f4f9; margin: 40px;">
-    
+    <div style="max-width: 750px; margin: auto; background: white; padding: 35px; border-radius: 8px; box-shadow: 0px 0px 15px rgba(0,0,0,0.1);">
+<h2 style="color: #28a745; margin-top: 0">"Contrato Gerado com Sucesso!"</h2>
+
+<p>As  informações foram puxadas automaticamente do seu painel e o e-mail já foi disparado</p>
+
+<hr style="border: 0; border-top: 1px solid: #ddd; margin: 20px 0,">
+
+// CONTRATO JÁ PREENCHIDO COM AS VARIAVEIS//
+
+<div style="border: 1px solide #ccc; padding: 25px; background"></div>
+
+
+
+
+    </div>
     
 </body>
 </html>
