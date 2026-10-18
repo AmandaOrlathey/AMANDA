@@ -8,17 +8,31 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #000000;
     font-family: Arial, Helvetica, sans-serif;
-    color: #ffffff;
-    width: 100%;
+    background-color: #0f0f14;
+    color: #f8fafc;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     overflow-x: hidden;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
 }
 
 /* ========== */
@@ -28,97 +42,220 @@ a {
 .Nav-bar {
     background-color: rgb(25, 37, 41);
     width: 100%;
-    height: 50px;
-    padding: 10px 0;
+    min-height: 50px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     gap: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .Nav-bar a {
     color: #ffffff;
     font-weight: bold;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.Nav-bar a:hover {
+    color: #00aeef;
 }
 
 .Nav-bar img {
     object-fit: cover;
-    width: 300px;
-    height: 200px;
-    margin-left: -80px;
-}
-
-/* ==================== */
-/*     APRESENTAÇÃO     */
-/* ==================== */
-
-.apresentacao {
-    background-color: rgb(25, 37, 41);
-    height: 400px;
-    padding: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.apresentacao .mais {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 600px;
-    order: 1;
-}
-
-.apresentacao h1 {
-    margin-top: 100px;
-    font-size: 32px;
-    font-weight: bold;
-    background: linear-gradient(90deg, #00f2fe 0%, #375bfc 51%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-}
-
-.apresentacao p {
-    margin-top: 80px;
-    color: #ffffff;
-    font-weight: 900;
-}
-
-.apresentacao button {
-    background-color: #00aeef;
-    color: #ffffff;
-    border: none;
-    margin-top: 20px;
-    padding: 12px 28px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.apresentacao button:hover {
-    opacity: 0.9;
-}
-
-.apresentacao > img {
-    width: 1000px;
+    width: 200px;
     height: auto;
-    order: 2;
+}
+
+/* =================== */
+/* CABEÇALHO (HEADER)  */
+/* =================== */
+
+.legal-header {
+    background-color: rgb(25, 37, 41);
+    color: #ffffff;
+    padding: 60px 20px 40px;
+    text-align: center;
+    border-bottom: 2px solid #292936;
+}
+
+.legal-header .badge {
+    display: inline-block;
+    background-color: rgba(0, 174, 239, 0.15);
+    color: #00aeef;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+}
+
+.legal-header h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.legal-header p {
+    font-size: 16px;
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ============================== */
+/* CONTEÚDO PRINCIPAL & ABAS CSS  */
+/* ============================== */
+
+.main-content {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    flex: 1;
+}
+
+.tab-container {
+    background: #15151d;
+    border-radius: 12px;
+    border: 1px solid #292936;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Esconde completamente os botões radio */
+.tab-container input[type="radio"] {
+    display: none !important;
+}
+
+/* Menu de Abas */
+.tab-menu {
+    display: flex;
+    background-color: #191922;
+    border-bottom: 1px solid #292936;
+}
+
+.tab-menu label {
+    flex: 1;
+    padding: 18px 16px;
+    text-align: center;
+    font-weight: 600;
+    color: #9c9cab;
+    cursor: pointer;
+    transition: 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-menu label:hover {
+    color: #ffffff;
+    background-color: #21212c;
+}
+
+/* Estado Ativo das Abas */
+#tab1:checked ~ .tab-menu label[for="tab1"],
+#tab2:checked ~ .tab-menu label[for="tab2"],
+#tab3:checked ~ .tab-menu label[for="tab3"] {
+    color: #00aeef;
+    background-color: #15151d;
+    border-bottom-color: #00aeef;
+}
+
+/* Conteúdo das Abas */
+.tab-content {
+    padding: 40px;
+}
+
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+#tab1:checked ~ .tab-content #content1,
+#tab2:checked ~ .tab-content #content2,
+#tab3:checked ~ .tab-content #content3 {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ====================== */
+/* TIPOGRAFIA E ELEMENTOS */
+/* ====================== */
+
+.tab-pane h2 {
+    font-size: 26px;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.updated-date {
+    font-size: 14px;
+    color: #00aeef;
+    margin-bottom: 24px;
+    font-style: italic;
+}
+
+.tab-pane h3 {
+    font-size: 18px;
+    color: #00aeef;
+    margin: 24px 0 8px 0;
+}
+
+.tab-pane p {
+    margin-bottom: 16px;
+    color: #b8b8c7;
+}
+
+.tab-pane ul {
+    margin-left: 24px;
+    margin-bottom: 24px;
+    color: #b8b8c7;
+}
+
+.tab-pane li {
+    margin-bottom: 8px;
+}
+
+/* Minuta de Contrato / Destaques */
+.contract-preview {
+    background-color: #191922;
+    border: 1px solid #292936;
+    border-left: 4px solid #00aeef;
+    padding: 24px;
+    border-radius: 6px;
+    margin-top: 24px;
+}
+
+.contract-preview h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.contract-preview h5 {
+    font-size: 15px;
+    color: #00aeef;
+    margin: 16px 0 6px 0;
+    text-transform: uppercase;
 }
 
 /* ==================== */
-/*   SEÇÃO DE PROJETOS  */
+/*  CARDS DE PROJETOS   */
 /* ==================== */
-
-.projetos-secao {
-    background-color: #0f0f14;
-    margin-top: 15px;
-    padding: 40px 10%;
-}
 
 .projetos {
     display: flex;
@@ -136,66 +273,22 @@ a {
 
 .card:hover {
     transform: translateY(-8px);
-    border-color: rgb(0, 4, 255);
+    border-color: #00aeef;
 }
 
 .numero-projeto {
-    color: rgb(0, 4, 255);
+    color: #00aeef;
     font-size: 14px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .card h3 {
     font-size: 22px;
     margin-bottom: 15px;
+    color: #ffffff;
 }
 
 .card p {
     color: #9c9cab;
-    margin-bottom: 25px;
-}
-
-.card > a {
-    color: rgb(0, 4, 255);
-    font-weight: bold;
-}
-
-/* Tecnologias */
-.tecnologias {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 25px;
-}
-
-.tecnologias span {
-    background-color: #292936;
-    color: #bdbdc9;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 12px;
-}
-
-/* ==================== */
-/*    RESPONSIVIDADE    */
-/* ==================== */
-
-@media (max-width: 900px) {
-    .apresentacao {
-        height: auto;
-        flex-direction: column;
-    }
-
-    .apresentacao > img {
-        width: 100%;
-        order: 1;
-    }
-
-    .apresentacao .mais {
-        order: 2;
-    }
-
-    .projetos {
-        flex-direction: column;
-    }
-}
+    margin-
