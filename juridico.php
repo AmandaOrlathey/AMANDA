@@ -2,7 +2,6 @@
 $cliente_nome = isset($_GET['cliente']) ? htmlspecialchars($_GET['cliente']) : "Selecione o Cliente no Orçamento";
 $cliente_doc = isset($_GET['doc']) ? htmlspecialchars($_GET['doc']) : "CPF/CNPJ não informado";
 $valor_orçamento = isset($_GET['valor']) ? htmlspecialchars($_GET['valor']) : "R$0,00";
-
 ?>
 
 <!DOCTYPE html>
@@ -14,20 +13,20 @@ $valor_orçamento = isset($_GET['valor']) ? htmlspecialchars($_GET['valor']) : "
     <link rel="stylesheet" href="../css/juridico.css">
 </head>
 
-
 <body>
 
-        <div class="Nav-bar">
-            <img src="../imgHtml/Gemini_Generated_Image_5kpxl15kpxl15kpx-removebg-preview.png" alt="">
-            <a href="../index.php">INICIO</a>
-            <a href="orcamento.php">ORÇAMENTO</a>
-            <a href="financeiro.php">FINANCEIRO</a>
-            <a href="juridico.php">JURIDICO</a>
-            <a href="projetos.php">PROJETOS</a>
-            <a href="desenvolvimento.php">DESENVOLVIMENTO</a>
-        </div><!--Nav-bar-->
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <div class="Nav-bar">
+        <img src="../imgHtml/Gemini_Generated_Image_5kpxl15kpxl15kpx-removebg-preview.png" alt="Logo">
+        <a href="../index.php">INÍCIO</a>
+        <a href="orcamento.php">ORÇAMENTO</a>
+        <a href="financeiro.php">FINANCEIRO</a>
+        <a href="juridico.php">JURÍDICO</a>
+        <a href="projetos.php">PROJETOS</a>
+        <a href="desenvolvimento.php">DESENVOLVIMENTO</a>
+    </div>
 
-    <!-- Cabeçalho Principal -->
+    <!-- CABEÇALHO PRINCIPAL -->
     <header class="legal-header">
         <div class="container">
             <span class="badge">Transparência & Conformidade</span>
@@ -93,23 +92,24 @@ $valor_orçamento = isset($_GET['valor']) ? htmlspecialchars($_GET['valor']) : "
                     <div class="contract-preview">
                         <h4>CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE DESENVOLVIMENTO DE SOFTWARE</h4>
                         <p><strong>CONTRATADA:</strong> Five Devs e um Sonho, inscrita no CNPJ sob o nº [00.000.000/0001-00].</p>
-                        <p><strong>CONTRATANTE:</strong><span style="color: blue;"><?php echo $cliente_nome;?></span>, inscrito(a) no CPF/CNPJ sob o nº <span style="color: blue;"><?php echo $cliente_doc; ?></span></p> 
-                         <p> <strong>VALOR TOTAL:</strong><span style="color: blue"> <php echo $valor_orçamento; ?></span></p>
+                        <p><strong>CONTRATANTE:</strong> <span style="color: #00aeef; font-weight: bold;"><?php echo $cliente_nome; ?></span>, inscrito(a) no CPF/CNPJ sob o nº <span style="color: #00aeef; font-weight: bold;"><?php echo $cliente_doc; ?></span></p> 
+                        <p><strong>VALOR TOTAL:</strong> <span style="color: #00aeef; font-weight: bold;"><?php echo $valor_orçamento; ?></span></p>
+                        
                         <h5>CLÁUSULA DE PROPRIEDADE INTELECTUAL</h5>
                         <p>Após a liquidação integral dos valores ajustados na proposta comercial, todos os direitos patrimoniais e sobre o código-fonte desenvolvido sob medida serão transferidos integralmente ao CONTRATANTE.</p>
 
                         <h5>CLÁUSULA DE GARANTIA E SUPORTE</h5>
                         <p>A CONTRATADA oferece garantia técnica de 30 (trinta) dias após a entrega final para correção de eventuais erros (bugs) sem custos adicionais, desde que não sejam causados por intervenção de terceiros ou alteração no escopo.</p>
-                        <!--- BOTÃO E FORMULARIO DE ENVIO PARA ASSINATURA-->
-                        <form action="enviar_assinatura.php" method="post" style="margin-top:20px; border-top: 1px solid #ccc; padding-top:15px;">
-                            <input type="hidden" name="cliente_nome" value="<?php echo $cliente_nome;?>">
-                            <input type="hidden" name="cliente_doc" value="<?php echo $cliente_doc;?>"> 
-                            <input type="hidden" name="valor_orçamento" value="<?php echo $valor_orçamento;?>">
+
+                        <!-- FORMULÁRIO DE ENVIO PARA ASSINATURA -->
+                        <form action="enviar_assinatura.php" method="post" style="margin-top:20px; border-top: 1px solid #292936; padding-top:15px;">
+                            <input type="hidden" name="cliente_nome" value="<?php echo $cliente_nome; ?>">
+                            <input type="hidden" name="cliente_doc" value="<?php echo $cliente_doc; ?>"> 
+                            <input type="hidden" name="valor_orçamento" value="<?php echo $valor_orçamento; ?>">
                             
-                            <button type="submit" style="background-color: #28a745; color: white; padding: 10px 15px; border: nome; border-radius: 4px; cursor: pointer">
+                            <button type="submit" style="background-color: #00aeef; color: #ffffff; padding: 12px 20px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">
                                 Enviar Contrato para Assinatura
                             </button>
-                            
                         </form>
                     </div>
                 </section>
@@ -118,6 +118,7 @@ $valor_orçamento = isset($_GET['valor']) ? htmlspecialchars($_GET['valor']) : "
         </div>
     </main>
 
+    <!-- RODAPÉ -->
     <footer class="legal-footer">
         <div class="container">
             <p>&copy; 2026 5 Devs e Um Sonho. Todos os direitos reservados. Projeto Acadêmico - Técnico em Desenvolvimento de Sistemas. Realizado por Amanda Orlatei.</p>
