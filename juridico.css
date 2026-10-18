@@ -259,5 +259,47 @@ a {
 .legal-footer {
     background-color: #0b0b10;
     color: #737380;
-    text-align:
+    text-align: center;
+    padding: 25px 0;
+    font-size: 14px;
+    border-top: 1px solid #1f1f2b;
+}
+
+/* ==================== */
+/*   RESPONSIVIDADE     */
+/* ==================== */
+
+@media (max-width: 800px) {
+    .Nav-bar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .legal-header h1 {
+        font-size: 26px;
+    }
+
+    .tab-menu {
+        flex-direction: column;
+    }
+
+    .tab-menu label {
+        border-bottom: 1px solid #292936;
+        border-left: 4px solid transparent;
+        text-align: left;
+        padding: 14px 20px;
+    }
+
+    #tab1:checked ~ .tab-menu label[for="tab1"],
+    #tab2:checked ~ .tab-menu label[for="tab2"],
+    #tab3:checked ~ .tab-menu label[for="tab3"] {
+        border-bottom-color: #292936;
+        border-left-color: #00aeef;
+    }
+
+    .tab-content {
+        padding: 20px;
+    }
 }

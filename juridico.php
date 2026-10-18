@@ -3,22 +3,22 @@ $cliente_nome = isset($_GET['cliente']) ? htmlspecialchars($_GET['cliente']) : "
 $cliente_doc = isset($_GET['doc']) ? htmlspecialchars($_GET['doc']) : "CPF/CNPJ não informado";
 $valor_orçamento = isset($_GET['valor']) ? htmlspecialchars($_GET['valor']) : "R$0,00";
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informações Jurídicas & Termos de Serviço | Nossa Empresa de Software</title>
-    <link rel="stylesheet" href="../css/juridico.css">
+    <title>Informações Jurídicas & Termos de Serviço</title>
+    
+    <!-- Caminho compatível com a raiz do servidor + Prevenção de Cache -->
+    <link rel="stylesheet" href="/css/juridico.css?v=<?php echo time(); ?>">
 </head>
-
 <body>
 
     <!-- BARRA DE NAVEGAÇÃO -->
     <div class="Nav-bar">
-        <img src="../imgHtml/Gemini_Generated_Image_5kpxl15kpxl15kpx-removebg-preview.png" alt="Logo">
-        <a href="../index.php">INÍCIO</a>
+        <img src="/imgHtml/Gemini_Generated_Image_5kpxl15kpxl15kpx-removebg-preview.png" alt="Logo">
+        <a href="/index.php">INÍCIO</a>
         <a href="orcamento.php">ORÇAMENTO</a>
         <a href="financeiro.php">FINANCEIRO</a>
         <a href="juridico.php">JURÍDICO</a>
@@ -36,7 +36,7 @@ $valor_orçamento = isset($_GET['valor']) ? htmlspecialchars($_GET['valor']) : "
     </header>
 
     <main class="container main-content">
-        <!-- Estrutura de Abas em CSS Puro -->
+        <!-- Estrutura de Abas -->
         <div class="tab-container">
             <input type="radio" name="tabs" id="tab1" checked>
             <input type="radio" name="tabs" id="tab2">
