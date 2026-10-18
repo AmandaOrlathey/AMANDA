@@ -42,12 +42,12 @@ a {
 .Nav-bar {
     background-color: rgb(25, 37, 41);
     width: 100%;
-    min-height: 50px;
-    padding: 10px 20px;
+    min-height: 60px;
+    padding: 10px 5%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    gap: 30px;
+    justify-content: space-between;
+    gap: 20px;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -65,9 +65,9 @@ a {
 }
 
 .Nav-bar img {
-    object-fit: cover;
-    width: 200px;
-    height: auto;
+    object-fit: contain;
+    height: 40px;
+    width: auto;
 }
 
 /* =================== */
@@ -77,9 +77,9 @@ a {
 .legal-header {
     background-color: rgb(25, 37, 41);
     color: #ffffff;
-    padding: 60px 20px 40px;
+    padding: 50px 20px 40px;
     text-align: center;
-    border-bottom: 2px solid #292936;
+    border-bottom: 1px solid #292936;
 }
 
 .legal-header .badge {
@@ -96,7 +96,7 @@ a {
 }
 
 .legal-header h1 {
-    font-size: 36px;
+    font-size: 32px;
     margin-bottom: 12px;
     font-weight: bold;
 }
@@ -126,12 +126,12 @@ a {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Esconde completamente os botões radio */
+/* OCULTA OS BOTÕES RADIO */
 .tab-container input[type="radio"] {
     display: none !important;
 }
 
-/* Menu de Abas */
+/* Menu das Abas */
 .tab-menu {
     display: flex;
     background-color: #191922;
@@ -163,7 +163,7 @@ a {
     border-bottom-color: #00aeef;
 }
 
-/* Conteúdo das Abas */
+/* Conteúdo interno das Abas */
 .tab-content {
     padding: 40px;
 }
@@ -213,22 +213,21 @@ a {
     margin: 24px 0 8px 0;
 }
 
-.tab-pane p {
+.tab-pane p, 
+.tab-pane ul {
     margin-bottom: 16px;
     color: #b8b8c7;
 }
 
 .tab-pane ul {
     margin-left: 24px;
-    margin-bottom: 24px;
-    color: #b8b8c7;
 }
 
 .tab-pane li {
     margin-bottom: 8px;
 }
 
-/* Minuta de Contrato / Destaques */
+/* Minuta de Contrato */
 .contract-preview {
     background-color: #191922;
     border: 1px solid #292936;
@@ -253,42 +252,12 @@ a {
     text-transform: uppercase;
 }
 
-/* ==================== */
-/*  CARDS DE PROJETOS   */
-/* ==================== */
+/* =================== */
+/*   RODAPÉ (FOOTER)   */
+/* =================== */
 
-.projetos {
-    display: flex;
-    gap: 25px;
+.legal-footer {
+    background-color: #0b0b10;
+    color: #737380;
+    text-align:
 }
-
-.card {
-    flex: 1;
-    background-color: #191922;
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid #292936;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    border-color: #00aeef;
-}
-
-.numero-projeto {
-    color: #00aeef;
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.card h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: #ffffff;
-}
-
-.card p {
-    color: #9c9cab;
-    margin-
